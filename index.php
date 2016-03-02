@@ -14,6 +14,7 @@ $dbh = db_access(DB_NAME,DB_HOST,USER,PASS);
 <p><a href="/create/My_movie_pro/test.php">テストページ(test.php)</a></p>
 <p><a href="/create/My_movie_pro/test2.php">テストページ2(test2.php)</a></p>
 <p><a href="/create/My_movie_pro/test4.php">テストページ4(test4.php)</a></p>
+<p><a href="/create/My_movie_pro/test5.php">テストページ5(test5.php)</a></p>
 
 <?php
 
