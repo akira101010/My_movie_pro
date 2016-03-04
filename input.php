@@ -16,20 +16,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$date_time = now_datetime();
 
 	$input = type_decision($_POST['url']);
-	//$input["flag"]["movie_id"]["site"]["title"]["msg"]
+	//$input["flag"]["movie_code"]["site"]["title"]["msg"]
 	
 	if($input["flag"]){
 	//入力内容に問題ない場合重複チェック
-		$check_sql = "SELECT * FROM movies WHERE movie_id = ? AND site = ?";
+		$check_sql = "SELECT * FROM movies WHERE movie_code = ? AND site = ?";
 		$check_sql_pdo = $dbh->prepare($check_sql);
-		$check_sql_pdo->execute(array($input["movie_id"], $input["site"]));
+		$check_sql_pdo->execute(array($input["movie_code"], $input["site"]));
 		$check = $check_sql_pdo->fetch(PDO::FETCH_BOTH);
 
 		if(empty($check)){
 		//重複していない場合DB新規登録
-			$input_sql = "INSERT INTO movies (movie_id, site, title, c_date) VALUES (?, ?, ?, ?)";
+			$input_sql = "INSERT INTO movies (movie_code, site, title, c_date) VALUES (?, ?, ?, ?)";
 			$input_sql_pdo = $dbh->prepare($input_sql);
-			$input_sql_pdo->execute(array($input["movie_id"], $input["site"], $input["title"], $date_time));
+			$input_sql_pdo->execute(array($input["movie_code"], $input["site"], $input["title"], $date_time));
 
 		//movieをfav(直前登録IDを取得しなければならない)
 			$last_sql = 'SELECT LAST_INSERT_ID() FROM movies';

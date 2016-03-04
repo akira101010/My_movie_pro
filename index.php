@@ -24,7 +24,7 @@ $test_sql_pdo->execute();
 $test = $test_sql_pdo->fetchAll(PDO::FETCH_BOTH);
 
 foreach ($test as $tmp) {
-	echo $tmp["movie_id"]."<br>";
+	echo $tmp["movie_code"]."<br>";
 }
 
 echo "<pre>";

@@ -13,7 +13,7 @@ function type_decision($url){
 
 		if(fc2_url_pull($url)){
 		
-			$input["movie_id"] = fc2_url_pull($url);
+			$input["movie_code"] = fc2_url_pull($url);
 			$input["site"] = "fc2";
 			$input["title"] = "none_title_fc2";
 			$input["msg"] = "登録完了";
