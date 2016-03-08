@@ -16,12 +16,18 @@ $comment = "テスト2コメント";
 $folder_id = 2;
 $movie_id = 45;
 
-// folder_create($user_id, $title, $comment);
-$res = folder_in($folder_id, $movie_id);
-// $res = folder_get($folder_id);
 
-if($res){
-	echo "登録しました";
-}else{
-	echo "重複です";
-}
+// folder_create($user_id, $title, $comment);
+// $res = folder_in($folder_id, $movie_id);
+// $res = folder_get($folder_id);
+$res = user_folderfav_get($user_id);
+
+// if($res){
+// 	echo "登録しました";
+// }else{
+// 	echo "重複です";
+// }
+
+echo "<pre>";
+print_r($res);
+echo "</pre>";
