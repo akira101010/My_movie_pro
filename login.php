@@ -40,4 +40,19 @@ if(isset($_POST["login"])){
  </head>
  <body>
  	<form id="loginForm" name="loginForm" action="<?php print($_SERVER['PHP_SELF']) ?>" method="POST">
- 		
+ 		<fieldset>
+ 		<legend>ログインフォーム</legend>
+ 		<div><?php echo $errorMessage; ?></div>
+ 		<label for="userid">ユーザーID</label>
+ 		<input type="text" id="userid" name="userid" value="<?php echo $view_user_id; ?>">
+ 		<br>
+ 		<label for="pass">パスワード</label>
+ 		<input type="password" id="pass" name="pass" value="">
+ 		<br>
+ 		<label></label>
+ 		<input type="submit" id="login" name="login" value="ログイン">
+ 		</fieldset>
+ 		</form>
+ 		</body>
+ 	</html>
+ 	
